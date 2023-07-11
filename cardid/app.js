@@ -514,88 +514,129 @@ get(child(dbRef, 'Sponte_API/')).then((snapshot) => {
             const selectedTags = [];
 
             document.getElementById('select-turma-list').addEventListener('change', () => {
-            
-            const xhr = new XMLHttpRequest();
-            const url =
+              const xhr = new XMLHttpRequest();
+              const url =
                 'https://api.sponteeducacional.net.br/WSAPIEdu.asmx/GetAlunos2?nCodigoCliente=' +
                 codClienteUnidadeIV +
                 '&sToken=' +
                 tokenUnidadeIV +
                 '&sParametrosBusca=Nome=';
-            document.getElementById('list-students').innerHTML = '';
-            xhr.open('GET', url, true);
-
-            xhr.onload = function () {
+              document.getElementById('list-students').innerHTML = '';
+              xhr.open('GET', url, true);
+            
+              xhr.onload = function () {
                 if (xhr.status === 200) {
-                const data = xhr.responseXML;
-                const alunos = data.getElementsByTagName('wsAluno');
-
-                // Obtém a referência para o elemento select
-                const selectElement = document.getElementById('select-turma-list');
-
-                // Obtém o índice da opção selecionada
-                const selectedIndex = selectElement.selectedIndex;
-
-                // Obtém a opção selecionada pelo índice
-                const selectedOption = selectElement.options[selectedIndex];
-
-                // Obtém o texto da opção selecionada
-                const selectedOptionText = selectedOption.textContent;
-
-                // Exibe o nome da opção selecionada
-                for (let i = 0; i < alunos.length; i++) {
+                  const data = xhr.responseXML;
+                  const alunos = data.getElementsByTagName('wsAluno');
+            
+                  const selectElement = document.getElementById('select-turma-list');
+                  const selectedIndex = selectElement.selectedIndex;
+                  const selectedOption = selectElement.options[selectedIndex];
+                  const selectedOptionText = selectedOption.textContent;
+            
+                  for (let i = 0; i < alunos.length; i++) {
                     if (alunos[i].childNodes[37].innerHTML == selectedOptionText) {
-                    const matricula = alunos[i].childNodes[43].innerHTML;
-                    const nome = alunos[i].childNodes[5].innerHTML;
-                    const turma = alunos[i].childNodes[37].innerHTML;
-                    const nascimento = alunos[i].childNodes[13].innerHTML;
-
-                    // Cria o elemento de checkbox
-                    const checkbox = document.createElement('input');
-                    checkbox.type = 'checkbox';
-
-                    // Adiciona um evento de clique ao checkbox
-                    checkbox.addEventListener('click', function () {
+                      const matricula = alunos[i].childNodes[43].innerHTML;
+                      const nome = alunos[i].childNodes[5].innerHTML;
+                      const turma = alunos[i].childNodes[37].innerHTML;
+                      const nascimento = alunos[i].childNodes[13].innerHTML;
+            
+                      const checkbox = document.createElement('input');
+                      checkbox.type = 'checkbox';
+            
+                      checkbox.addEventListener('click', function () {
                         if (this.checked) {
-                        // Adiciona a tag selecionada ao array
-                        selectedTags.push(alunos[i]);
+                          selectedTags.push(alunos[i]);
                         } else {
-                        // Remove a tag desmarcada do array
-                        const index = selectedTags.indexOf(alunos[i]);
-                        if (index > -1) {
+                          const index = selectedTags.indexOf(alunos[i]);
+                          if (index > -1) {
                             selectedTags.splice(index, 1);
+                          }
                         }
-                        }
-                    });
-
-                    // Cria o elemento da lista com o checkbox e o nome do aluno
-                    const listItem = document.createElement('li');
-                    listItem.appendChild(checkbox);
-                    listItem.appendChild(document.createTextNode(' ' + nome));
-
-                    // Adiciona o elemento da lista à div de alunos
-                    document.getElementById('list-students').appendChild(listItem);
+                      });
+            
+                      const listItem = document.createElement('li');
+                      listItem.appendChild(checkbox);
+                      listItem.appendChild(document.createTextNode(' ' + nome));
+            
+                      document.getElementById('list-students').appendChild(listItem);
                     }
-                }
+                  }
                 } else {
-                console.error('Erro na requisição: ' + xhr.statusText);
+                  console.error('Erro na requisição: ' + xhr.statusText);
                 }
-
-                document.getElementById('generate-cards-btn').addEventListener('click', ()=>{
-                    console.log(selectedTags)
-                    document.getElementById('ul-cards').innerHTML = ''
-                    for(let i = 0; i <= selectedTags.length; i++){
-                        console.log(selectedTags[i].childNodes)
-                        document.getElementById('ul-cards').innerHTML += '<li> <ul class="card" id="card"> <li><img src="" alt="" id="frente"></li> <li><img src="" alt="" id="verso"></li> </ul> <div class="dados-alunos" id="dados-alunos"> <img src="" alt="" class="photo" id="photo"> <div id="matricula"><span>Nº Matrícula:</span><br>' + selectedTags[i].childNodes[43].innerHTML + '</div> <div id="name"><span>Nome:</span><br>' + selectedTags[i].childNodes[5].innerHTML + '</div> <div id="turma"><span>Turma:</span><br>' + selectedTags[i].childNodes[37].innerHTML + '</div> <div id="nascimento"><span>Data de Nascimento:</span><br>' + selectedTags[i].childNodes[13].innerHTML + '</div><div id="lei">A Lei da Meia-Entrada (Lei nº 12.933/2013) estabelece que todo estudante regularmente matriculado tem direito a pagar metade do valor em eventos culturais, esportivos e de lazer. Essa carteirinha comprova a condição de estudante e permite o acesso aos benefícios previstos na lei.</div> <img src="" alt="" id="qrcode" class="qrcode"> <div id="validade"><strong>Validade:</strong> fev/2024</div> <div id="school-name">Ícone Colégio e Curso</div> <div id="endereco">Praça Miguel Osório, 22 - Recreio, RJ</div> <div id="email">secretaria@unidade4.icone.g12.br</div> <div id="telefone">(21) 3900-8299</div> </div> </li>'
-                    }
-                })
-            };
-
-            xhr.onerror = function () {
+              };
+            
+              xhr.onerror = function () {
                 console.error('Erro na requisição.');
-            };
-
-            xhr.send();
+              };
+            
+              xhr.send();
+            });
+            
+            document.getElementById('generate-cards-btn').addEventListener('click', () => {
+              document.getElementById('ul-cards').innerHTML = '';
+            
+              for (let i = 0; i < selectedTags.length; i++) {
+                const xhrImage = new XMLHttpRequest();
+                const url =
+                  'https://api.sponteeducacional.net.br/WSAPIEdu.asmx/GetImageApp?nCodigoCliente=' +
+                  codClienteUnidadeIV +
+                  '&nAlunoID=' +
+                  selectedTags[i].childNodes[3].innerHTML +
+                  '&nResponsavelID=0&sToken=' +
+                  tokenUnidadeIV;
+            
+                xhrImage.open('GET', url, true);
+            
+                xhrImage.onload = function () {
+                  if (xhrImage.status === 200) {
+                    const data = xhrImage.responseXML;
+            
+                    const listItem = document.createElement('li');
+                    listItem.innerHTML =
+                      '<ul class="card" id="card">' +
+                      '<li><img src="" alt="" id="frente"></li>' +
+                      '<li><img src="" alt="" id="verso"></li>' +
+                      '</ul>' +
+                      '<div class="dados-alunos" id="dados-alunos">' +
+                      '<img src="' +
+                      'data:image/jpeg;base64,' +
+                      data.getElementsByTagName('wsFotoApp')[0].childNodes[7].innerHTML +
+                      '" alt="" class="photo" id="photo">' +
+                      '<div id="matricula"><span>Nº Matrícula:</span><br>' +
+                      selectedTags[i].childNodes[43].innerHTML +
+                      '</div>' +
+                      '<div id="name"><span>Nome:</span><br>' +
+                      selectedTags[i].childNodes[5].innerHTML +
+                      '</div>' +
+                      '<div id="turma"><span>Turma:</span><br>' +
+                      selectedTags[i].childNodes[37].innerHTML +
+                      '</div>' +
+                      '<div id="nascimento"><span>Data de Nascimento:</span><br>' +
+                      selectedTags[i].childNodes[13].innerHTML +
+                      '</div>' +
+                      '<div id="lei">A Lei da Meia-Entrada (Lei nº 12.933/2013) estabelece que todo estudante regularmente matriculado tem direito a pagar metade do valor em eventos culturais, esportivos e de lazer. Essa carteirinha comprova a condição de estudante e permite o acesso aos benefícios previstos na lei.</div>' +
+                      '<img src="' + 'https://api.qrserver.com/v1/create-qr-code/?size=60x60&data=' + selectedTags[i].childNodes[43].innerHTML + '" alt="" id="qrcode" class="qrcode">' +
+                      '<div id="validade"><strong>Validade:</strong> fev/2024</div>' +
+                      '<div id="school-name">Ícone Colégio e Curso</div>' +
+                      '<div id="endereco">Praça Miguel Osório, 22 - Recreio, RJ</div>' +
+                      '<div id="email">secretaria@unidade4.icone.g12.br</div>' +
+                      '<div id="telefone">(21) 3900-8299</div>' +
+                      '</div>';
+            
+                    document.getElementById('ul-cards').appendChild(listItem);
+                  } else {
+                    console.error('Erro na requisição: ' + xhrImage.statusText);
+                  }
+                };
+            
+                xhrImage.onerror = function () {
+                  console.error('Erro na requisição.');
+                };
+            
+                xhrImage.send();
+              }
             });
 
         }
