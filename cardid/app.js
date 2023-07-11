@@ -41,6 +41,7 @@ get(child(dbRef, 'Sponte_API/')).then((snapshot) => {
         
             if(unidade == 'unidadeI'){
                 document.getElementById('turmasInput').innerHTML = '<option value="">--Selecione a Unidade--</option>'
+                document.getElementById('select-turma-list').innerHTML = '<option value="null">--Selecione a Turma--</option>'
                 document.getElementById('email').innerHTML = 'secretaria@unidade1.icone.g12.br'
                 document.getElementById('endereco').innerHTML = 'Av. dos Mananciais, 436 - Taquara, RJ'
                 appInitMananciais()
@@ -48,6 +49,7 @@ get(child(dbRef, 'Sponte_API/')).then((snapshot) => {
         
             if(unidade == 'unidadeII'){
                 document.getElementById('turmasInput').innerHTML = '<option value="">--Selecione a Unidade--</option>'
+                document.getElementById('select-turma-list').innerHTML = '<option value="null">--Selecione a Turma--</option>'
                 document.getElementById('email').innerHTML = 'secretaria@unidade2.icone.g12.br'
                 document.getElementById('endereco').innerHTML = 'Estr. do Tindiba, 3250 - Taquara, RJ'
                 appInitTindiba()
@@ -55,6 +57,7 @@ get(child(dbRef, 'Sponte_API/')).then((snapshot) => {
         
             if(unidade == 'unidadeIV'){
                 document.getElementById('turmasInput').innerHTML = '<option value="">--Selecione a Unidade--</option>'
+                document.getElementById('select-turma-list').innerHTML = '<option value="null">--Selecione a Turma--</option>'
                 document.getElementById('email').innerHTML = 'secretaria@unidade4.icone.g12.br'
                 document.getElementById('endereco').innerHTML = 'Praça Miguel Osório, 22 - Recreio, RJ'
                 appInitRecreio()
@@ -62,6 +65,7 @@ get(child(dbRef, 'Sponte_API/')).then((snapshot) => {
         
             if(unidade == 'unidadeIII'){
                 document.getElementById('turmasInput').innerHTML = '<option value="">--Selecione a Unidade--</option>'
+                document.getElementById('select-turma-list').innerHTML = '<option value="null">--Selecione a Turma--</option>'
                 document.getElementById('email').innerHTML = 'secretaria@kids.icone.g12.br'
                 document.getElementById('endereco').innerHTML = 'Estr. do Rio Grande, 1159 - Taquara, RJ'
                 appInitKids()
@@ -82,6 +86,7 @@ get(child(dbRef, 'Sponte_API/')).then((snapshot) => {
                 for(let i = 0; i <= turmas.length; i++){
                     if(turmas[i].childNodes[9].innerHTML == 'Aberta'){
                         document.getElementById('turmasInput').innerHTML += '<option value="' + turmas[i].childNodes[5].innerHTML + '">' + turmas[i].childNodes[3].innerHTML + '</option>'
+                        document.getElementById('select-turma-list').innerHTML += '<option value="' + turmas[i].childNodes[5].innerHTML + '">' + turmas[i].childNodes[3].innerHTML + '</option>'
                     }
             
                 }
@@ -227,6 +232,7 @@ get(child(dbRef, 'Sponte_API/')).then((snapshot) => {
                 for(let i = 0; i <= turmas.length; i++){
                     if(turmas[i].childNodes[9].innerHTML == 'Aberta'){
                         document.getElementById('turmasInput').innerHTML += '<option value="' + turmas[i].childNodes[5].innerHTML + '">' + turmas[i].childNodes[3].innerHTML + '</option>'
+                        document.getElementById('select-turma-list').innerHTML += '<option value="' + turmas[i].childNodes[5].innerHTML + '">' + turmas[i].childNodes[3].innerHTML + '</option>'
                     }
             
                 }
@@ -372,6 +378,7 @@ get(child(dbRef, 'Sponte_API/')).then((snapshot) => {
                 for(let i = 0; i <= turmas.length; i++){
                     if(turmas[i].childNodes[9].innerHTML == 'Aberta'){
                         document.getElementById('turmasInput').innerHTML += '<option value="' + turmas[i].childNodes[5].innerHTML + '">' + turmas[i].childNodes[3].innerHTML + '</option>'
+                        document.getElementById('select-turma-list').innerHTML += '<option value="' + turmas[i].childNodes[5].innerHTML + '">' + turmas[i].childNodes[3].innerHTML + '</option>'
                     }
             
                 }
@@ -502,6 +509,95 @@ get(child(dbRef, 'Sponte_API/')).then((snapshot) => {
             
                 xhr.send();
             })
+
+            // Array para armazenar as tags selecionadas
+            const selectedTags = [];
+
+            document.getElementById('select-turma-list').addEventListener('change', () => {
+            
+            const xhr = new XMLHttpRequest();
+            const url =
+                'https://api.sponteeducacional.net.br/WSAPIEdu.asmx/GetAlunos2?nCodigoCliente=' +
+                codClienteUnidadeIV +
+                '&sToken=' +
+                tokenUnidadeIV +
+                '&sParametrosBusca=Nome=';
+            document.getElementById('list-students').innerHTML = '';
+            xhr.open('GET', url, true);
+
+            xhr.onload = function () {
+                if (xhr.status === 200) {
+                const data = xhr.responseXML;
+                const alunos = data.getElementsByTagName('wsAluno');
+
+                // Obtém a referência para o elemento select
+                const selectElement = document.getElementById('select-turma-list');
+
+                // Obtém o índice da opção selecionada
+                const selectedIndex = selectElement.selectedIndex;
+
+                // Obtém a opção selecionada pelo índice
+                const selectedOption = selectElement.options[selectedIndex];
+
+                // Obtém o texto da opção selecionada
+                const selectedOptionText = selectedOption.textContent;
+
+                // Exibe o nome da opção selecionada
+                for (let i = 0; i < alunos.length; i++) {
+                    if (alunos[i].childNodes[37].innerHTML == selectedOptionText) {
+                    const matricula = alunos[i].childNodes[43].innerHTML;
+                    const nome = alunos[i].childNodes[5].innerHTML;
+                    const turma = alunos[i].childNodes[37].innerHTML;
+                    const nascimento = alunos[i].childNodes[13].innerHTML;
+
+                    // Cria o elemento de checkbox
+                    const checkbox = document.createElement('input');
+                    checkbox.type = 'checkbox';
+
+                    // Adiciona um evento de clique ao checkbox
+                    checkbox.addEventListener('click', function () {
+                        if (this.checked) {
+                        // Adiciona a tag selecionada ao array
+                        selectedTags.push(alunos[i]);
+                        } else {
+                        // Remove a tag desmarcada do array
+                        const index = selectedTags.indexOf(alunos[i]);
+                        if (index > -1) {
+                            selectedTags.splice(index, 1);
+                        }
+                        }
+                    });
+
+                    // Cria o elemento da lista com o checkbox e o nome do aluno
+                    const listItem = document.createElement('li');
+                    listItem.appendChild(checkbox);
+                    listItem.appendChild(document.createTextNode(' ' + nome));
+
+                    // Adiciona o elemento da lista à div de alunos
+                    document.getElementById('list-students').appendChild(listItem);
+                    }
+                }
+                } else {
+                console.error('Erro na requisição: ' + xhr.statusText);
+                }
+
+                document.getElementById('generate-cards-btn').addEventListener('click', ()=>{
+                    console.log(selectedTags)
+                    document.getElementById('ul-cards').innerHTML = ''
+                    for(let i = 0; i <= selectedTags.length; i++){
+                        console.log(selectedTags[i].childNodes)
+                        document.getElementById('ul-cards').innerHTML += '<li> <ul class="card" id="card"> <li><img src="" alt="" id="frente"></li> <li><img src="" alt="" id="verso"></li> </ul> <div class="dados-alunos" id="dados-alunos"> <img src="" alt="" class="photo" id="photo"> <div id="matricula"><span>Nº Matrícula:</span><br>' + selectedTags[i].childNodes[43].innerHTML + '</div> <div id="name"><span>Nome:</span><br>' + selectedTags[i].childNodes[5].innerHTML + '</div> <div id="turma"><span>Turma:</span><br>' + selectedTags[i].childNodes[37].innerHTML + '</div> <div id="nascimento"><span>Data de Nascimento:</span><br>' + selectedTags[i].childNodes[13].innerHTML + '</div><div id="lei">A Lei da Meia-Entrada (Lei nº 12.933/2013) estabelece que todo estudante regularmente matriculado tem direito a pagar metade do valor em eventos culturais, esportivos e de lazer. Essa carteirinha comprova a condição de estudante e permite o acesso aos benefícios previstos na lei.</div> <img src="" alt="" id="qrcode" class="qrcode"> <div id="validade"><strong>Validade:</strong> fev/2024</div> <div id="school-name">Ícone Colégio e Curso</div> <div id="endereco">Praça Miguel Osório, 22 - Recreio, RJ</div> <div id="email">secretaria@unidade4.icone.g12.br</div> <div id="telefone">(21) 3900-8299</div> </div> </li>'
+                    }
+                })
+            };
+
+            xhr.onerror = function () {
+                console.error('Erro na requisição.');
+            };
+
+            xhr.send();
+            });
+
         }
         
         function appInitKids(){
@@ -517,6 +613,7 @@ get(child(dbRef, 'Sponte_API/')).then((snapshot) => {
                 for(let i = 0; i <= turmas.length; i++){
                     if(turmas[i].childNodes[9].innerHTML == 'Aberta'){
                         document.getElementById('turmasInput').innerHTML += '<option value="' + turmas[i].childNodes[5].innerHTML + '">' + turmas[i].childNodes[3].innerHTML + '</option>'
+                        document.getElementById('select-turma-list').innerHTML += '<option value="' + turmas[i].childNodes[5].innerHTML + '">' + turmas[i].childNodes[3].innerHTML + '</option>'
                     }
             
                 }
@@ -560,6 +657,7 @@ get(child(dbRef, 'Sponte_API/')).then((snapshot) => {
                     for(let i = 0; i <= alunos.length; i++){
                         if(alunos[i].childNodes[37].innerHTML == selectedOptionText){
                             document.getElementById('alunosInput').innerHTML += '<option value="' + alunos[i].childNodes[3].innerHTML + '">' + alunos[i].childNodes[5].innerHTML + '</option>'
+                            
                         }
             
                     }
@@ -676,9 +774,6 @@ get(child(dbRef, 'card_background/')).then((snapshot) => {
 
 
 
-
-
-
 //Fotos
 document.getElementById('front').addEventListener('change', ()=>{
     // Obtém o elemento de input de arquivo
@@ -736,10 +831,13 @@ document.getElementById('change-btn').addEventListener('click', ()=>{
 
 document.getElementById('close').addEventListener('click', ()=>{
     document.getElementById('black-background').style.display = 'none'
+    document.getElementById('modal-config').style.display = 'none'
 })
 
 document.getElementById('config').addEventListener('click', ()=>{
     document.getElementById('black-background').style.display = 'block'
+    //document.getElementById('modal-config').style.display = 'block'
+    
 })
 
 //imprimir

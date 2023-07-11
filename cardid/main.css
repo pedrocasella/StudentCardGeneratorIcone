@@ -137,7 +137,7 @@ select option{
     .dados-alunos #turma{
         position: absolute;
         width: 210px;
-        transform: translate(90px, -38px);
+        transform: translate(90px, -33px);
     }
 
     .dados-alunos #nascimento{
@@ -208,7 +208,7 @@ select option{
     height: 100%;
     background-color: #0000008c;
     z-index: 2;
-    display: none;
+    display: block;
     animation: opacity .3s ease-in-out;
 }
 
@@ -228,6 +228,7 @@ select option{
     background-color: #fff;
     border-radius: 12px;
     padding: .5rem;
+    display: none;
 }
 
 #front{
@@ -299,6 +300,51 @@ select option{
     user-select: none;
     cursor: pointer;
 }
+
+/*Lista*/
+
+.modal-list{
+    width: 500px;
+    height: 380px;
+    padding: 2rem;
+    background-color: #fff;
+    transform: translateY(10%);
+    overflow-y: scroll;
+    border-radius: 7px;
+}
+
+.modal-list .list-students{
+    list-style: none;
+    height: 200px;
+    text-align: left;
+}
+
+.modal-list #list-students li{
+    text-align: left;
+    padding: .5rem;
+}
+
+#generate-cards-btn{
+    width: fit-content;
+    background-color: rgb(255, 96, 39);
+    color: #fff;
+    cursor: pointer;
+    user-select: none;
+    font-weight: bolder;
+    border-radius: 30px;
+    padding: .5rem;
+}
+
+#generate-cards-btn:hover{
+    background-color: rgb(233, 89, 37);
+    transition: linear .3s;
+}
+
+#generate-cards-btn:active{
+    cursor: default;
+}
+
+/*----*/
 
 .imprimir{
     width: 200px;
