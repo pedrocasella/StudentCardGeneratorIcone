@@ -345,19 +345,21 @@ select option{
 }
 
 #ul-cards{
-    transform: translateY(15%);
+    transform: translateY(50px);
 }
 
 #ul-cards li{
     margin-top: -1.5rem;
+    margin-bottom: -.6rem;
+    width: fit-content;
+    height: fit-content;
 }
 
 /*----*/
 
 .imprimir{
     width: 200px;
-    position: fixed;
-    transform: translate(800px, -200px);
+    transform: translate(300px);
     margin: 3rem 2rem 2rem 2rem;
     padding: .5rem;
     background-color: rgb(255, 96, 39);

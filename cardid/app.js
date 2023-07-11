@@ -44,6 +44,7 @@ get(child(dbRef, 'Sponte_API/')).then((snapshot) => {
             if(unidade == 'unidadeI'){
                 document.getElementById('turmasInput').innerHTML = '<option value="">--Selecione a Unidade--</option>'
                 document.getElementById('select-turma-list').innerHTML = '<option value="null">--Selecione a Turma--</option>'
+                document.getElementById('alunosInput').innerHTML = '<option value="">--Selecione o Aluno--</option>'
                 document.getElementById('ul-cards').innerHTML = '<li> <ul class="card" id="card"> <li><img src="' + document.getElementById('front-icon').style.backgroundImage.replace('url(', '').replace(')', '').replaceAll('"', '') + '" alt="" id="frente"></li> <li><img src="' + document.getElementById('verse-icon').style.backgroundImage.replace('url(', '').replace(')', '').replaceAll('"', '') + '" alt="" id="verso"></li> </ul> <div class="dados-alunos" id="dados-alunos"> <img src="" alt="" class="photo" id="photo"> <div id="matricula"></div> <div id="name"></div> <div id="turma"></div> <div id="nascimento"></div> <!-- Verso --> <div id="lei">A Lei da Meia-Entrada (Lei nº 12.933/2013) estabelece que todo estudante regularmente matriculado tem direito a pagar metade do valor em eventos culturais, esportivos e de lazer. Essa carteirinha comprova a condição de estudante e permite o acesso aos benefícios previstos na lei.</div> <img src="" alt="" id="qrcode" class="qrcode"> <div id="validade"><strong>Validade:</strong> fev/2024</div> <div id="school-name">Ícone Colégio e Curso</div> <div id="endereco">Av. dos Mananciais, 436 - Taquara, RJ</div> <div id="email">secretaria@unidade1.icone.g12.br</div> <div id="telefone">(21) 3900-8299</div> </div> </li>'
                 appInitMananciais()
             }
@@ -51,6 +52,7 @@ get(child(dbRef, 'Sponte_API/')).then((snapshot) => {
             if(unidade == 'unidadeII'){
                 document.getElementById('turmasInput').innerHTML = '<option value="">--Selecione a Unidade--</option>'
                 document.getElementById('select-turma-list').innerHTML = '<option value="null">--Selecione a Turma--</option>'
+                document.getElementById('alunosInput').innerHTML = '<option value="">--Selecione o Aluno--</option>'
                 document.getElementById('ul-cards').innerHTML = '<li> <ul class="card" id="card"> <li><img src="' + document.getElementById('front-icon').style.backgroundImage.replace('url(', '').replace(')', '').replaceAll('"', '') + '" alt="" id="frente"></li> <li><img src="' + document.getElementById('verse-icon').style.backgroundImage.replace('url(', '').replace(')', '').replaceAll('"', '') + '" alt="" id="verso"></li> </ul> <div class="dados-alunos" id="dados-alunos"> <img src="" alt="" class="photo" id="photo"> <div id="matricula"></div> <div id="name"></div> <div id="turma"></div> <div id="nascimento"></div> <!-- Verso --> <div id="lei">A Lei da Meia-Entrada (Lei nº 12.933/2013) estabelece que todo estudante regularmente matriculado tem direito a pagar metade do valor em eventos culturais, esportivos e de lazer. Essa carteirinha comprova a condição de estudante e permite o acesso aos benefícios previstos na lei.</div> <img src="" alt="" id="qrcode" class="qrcode"> <div id="validade"><strong>Validade:</strong> fev/2024</div> <div id="school-name">Ícone Colégio e Curso</div> <div id="endereco">Estr. do Tindiba, 3250 - Taquara, RJ</div> <div id="email">secretaria@unidade2.icone.g12.br</div> <div id="telefone">(21) 3900-8299</div> </div> </li>'
                 appInitTindiba()
             }
@@ -58,6 +60,7 @@ get(child(dbRef, 'Sponte_API/')).then((snapshot) => {
             if(unidade == 'unidadeIV'){
                 document.getElementById('turmasInput').innerHTML = '<option value="">--Selecione a Unidade--</option>'
                 document.getElementById('select-turma-list').innerHTML = '<option value="null">--Selecione a Turma--</option>'
+                document.getElementById('alunosInput').innerHTML = '<option value="">--Selecione o Aluno--</option>'
                 document.getElementById('ul-cards').innerHTML = '<li> <ul class="card" id="card"> <li><img src="' + document.getElementById('front-icon').style.backgroundImage.replace('url(', '').replace(')', '').replaceAll('"', '') + '" alt="" id="frente"></li> <li><img src="' + document.getElementById('verse-icon').style.backgroundImage.replace('url(', '').replace(')', '').replaceAll('"', '') + '" alt="" id="verso"></li> </ul> <div class="dados-alunos" id="dados-alunos"> <img src="" alt="" class="photo" id="photo"> <div id="matricula"></div> <div id="name"></div> <div id="turma"></div> <div id="nascimento"></div> <!-- Verso --> <div id="lei">A Lei da Meia-Entrada (Lei nº 12.933/2013) estabelece que todo estudante regularmente matriculado tem direito a pagar metade do valor em eventos culturais, esportivos e de lazer. Essa carteirinha comprova a condição de estudante e permite o acesso aos benefícios previstos na lei.</div> <img src="" alt="" id="qrcode" class="qrcode"> <div id="validade"><strong>Validade:</strong> fev/2024</div> <div id="school-name">Ícone Colégio e Curso</div> <div id="endereco">Praça Miguel Osório, 22 - Recreio, RJ</div> <div id="email">secretaria@unidade4.icone.g12.br</div> <div id="telefone">(21) 3900-8299</div> </div> </li>'
                 appInitRecreio()
             }
@@ -65,6 +68,7 @@ get(child(dbRef, 'Sponte_API/')).then((snapshot) => {
             if(unidade == 'unidadeIII'){
                 document.getElementById('turmasInput').innerHTML = '<option value="">--Selecione a Unidade--</option>'
                 document.getElementById('select-turma-list').innerHTML = '<option value="null">--Selecione a Turma--</option>'
+                document.getElementById('alunosInput').innerHTML = '<option value="">--Selecione o Aluno--</option>'
                 document.getElementById('ul-cards').innerHTML = '<li> <ul class="card" id="card"> <li><img src="' + document.getElementById('front-icon').style.backgroundImage.replace('url(', '').replace(')', '').replaceAll('"', '') + '" alt="" id="frente"></li> <li><img src="' + document.getElementById('verse-icon').style.backgroundImage.replace('url(', '').replace(')', '').replaceAll('"', '') + '" alt="" id="verso"></li> </ul> <div class="dados-alunos" id="dados-alunos"> <img src="" alt="" class="photo" id="photo"> <div id="matricula"></div> <div id="name"></div> <div id="turma"></div> <div id="nascimento"></div> <!-- Verso --> <div id="lei">A Lei da Meia-Entrada (Lei nº 12.933/2013) estabelece que todo estudante regularmente matriculado tem direito a pagar metade do valor em eventos culturais, esportivos e de lazer. Essa carteirinha comprova a condição de estudante e permite o acesso aos benefícios previstos na lei.</div> <img src="" alt="" id="qrcode" class="qrcode"> <div id="validade"><strong>Validade:</strong> fev/2024</div> <div id="school-name">Ícone Colégio e Curso</div> <div id="endereco">Estr. do Rio Grande, 1159 - Taquara, RJ</div> <div id="email">secretaria@kids.icone.g12.br</div> <div id="telefone">(21) 3900-8299</div> </div> </li>'
                 appInitKids()
             }
@@ -215,6 +219,137 @@ get(child(dbRef, 'Sponte_API/')).then((snapshot) => {
             
                 xhr.send();
             })
+
+            //Impressão em massa
+
+            // Array para armazenar as tags selecionadas
+            const selectedTags = [];
+
+            document.getElementById('select-turma-list').addEventListener('change', () => {
+              const xhr = new XMLHttpRequest();
+              const url =
+                'https://api.sponteeducacional.net.br/WSAPIEdu.asmx/GetAlunos2?nCodigoCliente=' +
+                codClienteUnidadeII +
+                '&sToken=' +
+                tokenUnidadeII +
+                '&sParametrosBusca=Nome=';
+              document.getElementById('list-students').innerHTML = '';
+              xhr.open('GET', url, true);
+            
+              xhr.onload = function () {
+                if (xhr.status === 200) {
+                  const data = xhr.responseXML;
+                  const alunos = data.getElementsByTagName('wsAluno');
+            
+                  const selectElement = document.getElementById('select-turma-list');
+                  const selectedIndex = selectElement.selectedIndex;
+                  const selectedOption = selectElement.options[selectedIndex];
+                  const selectedOptionText = selectedOption.textContent;
+            
+                  for (let i = 0; i < alunos.length; i++) {
+                    if (alunos[i].childNodes[37].innerHTML == selectedOptionText) {
+                      const matricula = alunos[i].childNodes[43].innerHTML;
+                      const nome = alunos[i].childNodes[5].innerHTML;
+                      const turma = alunos[i].childNodes[37].innerHTML;
+                      const nascimento = alunos[i].childNodes[13].innerHTML;
+            
+                      const checkbox = document.createElement('input');
+                      checkbox.type = 'checkbox';
+            
+                      checkbox.addEventListener('click', function () {
+                        if (this.checked) {
+                          selectedTags.push(alunos[i]);
+                        } else {
+                          const index = selectedTags.indexOf(alunos[i]);
+                          if (index > -1) {
+                            selectedTags.splice(index, 1);
+                          }
+                        }
+                      });
+            
+                      const listItem = document.createElement('li');
+                      listItem.appendChild(checkbox);
+                      listItem.appendChild(document.createTextNode(' ' + nome));
+            
+                      document.getElementById('list-students').appendChild(listItem);
+                    }
+                  }
+                } else {
+                  console.error('Erro na requisição: ' + xhr.statusText);
+                }
+              };
+            
+              xhr.onerror = function () {
+                console.error('Erro na requisição.');
+              };
+            
+              xhr.send();
+            });
+            
+            document.getElementById('generate-cards-btn').addEventListener('click', () => {
+              document.getElementById('ul-cards').innerHTML = '';
+            
+              for (let i = 0; i < selectedTags.length; i++) {
+                const xhrImage = new XMLHttpRequest();
+                const url =
+                  'https://api.sponteeducacional.net.br/WSAPIEdu.asmx/GetImageApp?nCodigoCliente=' +
+                  codClienteUnidadeII +
+                  '&nAlunoID=' +
+                  selectedTags[i].childNodes[3].innerHTML +
+                  '&nResponsavelID=0&sToken=' +
+                  tokenUnidadeII;
+            
+                xhrImage.open('GET', url, true);
+            
+                xhrImage.onload = function () {
+                  if (xhrImage.status === 200) {
+                    const data = xhrImage.responseXML;
+            
+                    const listItem = document.createElement('li');
+                    listItem.innerHTML =
+                      '<ul class="card" id="card">' +
+                      '<li><img src="' + document.getElementById('front-icon').style.backgroundImage.replace('url(', '').replace(')', '').replaceAll('"', '') + '" alt="" id="frente"></li>' +
+                      '<li><img src="' + document.getElementById('verse-icon').style.backgroundImage.replace('url(', '').replace(')', '').replaceAll('"', '') + '" alt="" id="verso"></li>' +
+                      '</ul>' +
+                      '<div class="dados-alunos" id="dados-alunos">' +
+                      '<img src="' +
+                      'data:image/jpeg;base64,' +
+                      data.getElementsByTagName('wsFotoApp')[0].childNodes[7].innerHTML +
+                      '" alt="" class="photo" id="photo">' +
+                      '<div id="matricula"><span>Nº Matrícula:</span><br>' +
+                      selectedTags[i].childNodes[43].innerHTML +
+                      '</div>' +
+                      '<div id="name"><span>Nome:</span><br>' +
+                      selectedTags[i].childNodes[5].innerHTML +
+                      '</div>' +
+                      '<div id="turma"><span>Turma:</span><br>' +
+                      selectedTags[i].childNodes[37].innerHTML +
+                      '</div>' +
+                      '<div id="nascimento"><span>Data de Nascimento:</span><br>' +
+                      selectedTags[i].childNodes[13].innerHTML +
+                      '</div>' +
+                      '<div id="lei">A Lei da Meia-Entrada (Lei nº 12.933/2013) estabelece que todo estudante regularmente matriculado tem direito a pagar metade do valor em eventos culturais, esportivos e de lazer. Essa carteirinha comprova a condição de estudante e permite o acesso aos benefícios previstos na lei.</div>' +
+                      '<img src="' + 'https://api.qrserver.com/v1/create-qr-code/?size=60x60&data=' + selectedTags[i].childNodes[43].innerHTML + '" alt="" id="qrcode" class="qrcode">' +
+                      '<div id="validade"><strong>Validade:</strong> fev/2024</div>' +
+                      '<div id="school-name">Ícone Colégio e Curso</div>' +
+                      '<div id="endereco">Estr. do Tindiba, 3250 - Taquara, RJ</div>' +
+                      '<div id="email">secretaria@unidade2.icone.g12.br</div>' +
+                      '<div id="telefone">(21) 3900-8299</div>' +
+                      '</div>';
+            
+                    document.getElementById('ul-cards').appendChild(listItem);
+                  } else {
+                    console.error('Erro na requisição: ' + xhrImage.statusText);
+                  }
+                };
+            
+                xhrImage.onerror = function () {
+                  console.error('Erro na requisição.');
+                };
+            
+                xhrImage.send();
+              }
+            });
         }
         
         function appInitMananciais(){
@@ -361,6 +496,137 @@ get(child(dbRef, 'Sponte_API/')).then((snapshot) => {
             
                 xhr.send();
             })
+
+            //Impressão em massa
+
+            // Array para armazenar as tags selecionadas
+            const selectedTags = [];
+
+            document.getElementById('select-turma-list').addEventListener('change', () => {
+              const xhr = new XMLHttpRequest();
+              const url =
+                'https://api.sponteeducacional.net.br/WSAPIEdu.asmx/GetAlunos2?nCodigoCliente=' +
+                codClienteUnidadeI +
+                '&sToken=' +
+                tokenUnidadeI +
+                '&sParametrosBusca=Nome=';
+              document.getElementById('list-students').innerHTML = '';
+              xhr.open('GET', url, true);
+            
+              xhr.onload = function () {
+                if (xhr.status === 200) {
+                  const data = xhr.responseXML;
+                  const alunos = data.getElementsByTagName('wsAluno');
+            
+                  const selectElement = document.getElementById('select-turma-list');
+                  const selectedIndex = selectElement.selectedIndex;
+                  const selectedOption = selectElement.options[selectedIndex];
+                  const selectedOptionText = selectedOption.textContent;
+            
+                  for (let i = 0; i < alunos.length; i++) {
+                    if (alunos[i].childNodes[37].innerHTML == selectedOptionText) {
+                      const matricula = alunos[i].childNodes[43].innerHTML;
+                      const nome = alunos[i].childNodes[5].innerHTML;
+                      const turma = alunos[i].childNodes[37].innerHTML;
+                      const nascimento = alunos[i].childNodes[13].innerHTML;
+            
+                      const checkbox = document.createElement('input');
+                      checkbox.type = 'checkbox';
+            
+                      checkbox.addEventListener('click', function () {
+                        if (this.checked) {
+                          selectedTags.push(alunos[i]);
+                        } else {
+                          const index = selectedTags.indexOf(alunos[i]);
+                          if (index > -1) {
+                            selectedTags.splice(index, 1);
+                          }
+                        }
+                      });
+            
+                      const listItem = document.createElement('li');
+                      listItem.appendChild(checkbox);
+                      listItem.appendChild(document.createTextNode(' ' + nome));
+            
+                      document.getElementById('list-students').appendChild(listItem);
+                    }
+                  }
+                } else {
+                  console.error('Erro na requisição: ' + xhr.statusText);
+                }
+              };
+            
+              xhr.onerror = function () {
+                console.error('Erro na requisição.');
+              };
+            
+              xhr.send();
+            });
+            
+            document.getElementById('generate-cards-btn').addEventListener('click', () => {
+              document.getElementById('ul-cards').innerHTML = '';
+            
+              for (let i = 0; i < selectedTags.length; i++) {
+                const xhrImage = new XMLHttpRequest();
+                const url =
+                  'https://api.sponteeducacional.net.br/WSAPIEdu.asmx/GetImageApp?nCodigoCliente=' +
+                  codClienteUnidadeI +
+                  '&nAlunoID=' +
+                  selectedTags[i].childNodes[3].innerHTML +
+                  '&nResponsavelID=0&sToken=' +
+                  tokenUnidadeI;
+            
+                xhrImage.open('GET', url, true);
+            
+                xhrImage.onload = function () {
+                  if (xhrImage.status === 200) {
+                    const data = xhrImage.responseXML;
+            
+                    const listItem = document.createElement('li');
+                    listItem.innerHTML =
+                      '<ul class="card" id="card">' +
+                      '<li><img src="' + document.getElementById('front-icon').style.backgroundImage.replace('url(', '').replace(')', '').replaceAll('"', '') + '" alt="" id="frente"></li>' +
+                      '<li><img src="' + document.getElementById('verse-icon').style.backgroundImage.replace('url(', '').replace(')', '').replaceAll('"', '') + '" alt="" id="verso"></li>' +
+                      '</ul>' +
+                      '<div class="dados-alunos" id="dados-alunos">' +
+                      '<img src="' +
+                      'data:image/jpeg;base64,' +
+                      data.getElementsByTagName('wsFotoApp')[0].childNodes[7].innerHTML +
+                      '" alt="" class="photo" id="photo">' +
+                      '<div id="matricula"><span>Nº Matrícula:</span><br>' +
+                      selectedTags[i].childNodes[43].innerHTML +
+                      '</div>' +
+                      '<div id="name"><span>Nome:</span><br>' +
+                      selectedTags[i].childNodes[5].innerHTML +
+                      '</div>' +
+                      '<div id="turma"><span>Turma:</span><br>' +
+                      selectedTags[i].childNodes[37].innerHTML +
+                      '</div>' +
+                      '<div id="nascimento"><span>Data de Nascimento:</span><br>' +
+                      selectedTags[i].childNodes[13].innerHTML +
+                      '</div>' +
+                      '<div id="lei">A Lei da Meia-Entrada (Lei nº 12.933/2013) estabelece que todo estudante regularmente matriculado tem direito a pagar metade do valor em eventos culturais, esportivos e de lazer. Essa carteirinha comprova a condição de estudante e permite o acesso aos benefícios previstos na lei.</div>' +
+                      '<img src="' + 'https://api.qrserver.com/v1/create-qr-code/?size=60x60&data=' + selectedTags[i].childNodes[43].innerHTML + '" alt="" id="qrcode" class="qrcode">' +
+                      '<div id="validade"><strong>Validade:</strong> fev/2024</div>' +
+                      '<div id="school-name">Ícone Colégio e Curso</div>' +
+                      '<div id="endereco">Av. dos Mananciais, 436 - Taquara, RJ</div>' +
+                      '<div id="email">secretaria@unidade1.icone.g12.br</div>' +
+                      '<div id="telefone">(21) 3900-8299</div>' +
+                      '</div>';
+            
+                    document.getElementById('ul-cards').appendChild(listItem);
+                  } else {
+                    console.error('Erro na requisição: ' + xhrImage.statusText);
+                  }
+                };
+            
+                xhrImage.onerror = function () {
+                  console.error('Erro na requisição.');
+                };
+            
+                xhrImage.send();
+              }
+            });
         }
         
         function appInitRecreio(){
@@ -786,6 +1052,137 @@ get(child(dbRef, 'Sponte_API/')).then((snapshot) => {
             
                 xhr.send();
             })
+
+            //Impressão em massa
+
+            // Array para armazenar as tags selecionadas
+            const selectedTags = [];
+
+            document.getElementById('select-turma-list').addEventListener('change', () => {
+              const xhr = new XMLHttpRequest();
+              const url =
+                'https://api.sponteeducacional.net.br/WSAPIEdu.asmx/GetAlunos2?nCodigoCliente=' +
+                codClienteUnidadeIII +
+                '&sToken=' +
+                tokenUnidadeIII +
+                '&sParametrosBusca=Nome=';
+              document.getElementById('list-students').innerHTML = '';
+              xhr.open('GET', url, true);
+            
+              xhr.onload = function () {
+                if (xhr.status === 200) {
+                  const data = xhr.responseXML;
+                  const alunos = data.getElementsByTagName('wsAluno');
+            
+                  const selectElement = document.getElementById('select-turma-list');
+                  const selectedIndex = selectElement.selectedIndex;
+                  const selectedOption = selectElement.options[selectedIndex];
+                  const selectedOptionText = selectedOption.textContent;
+            
+                  for (let i = 0; i < alunos.length; i++) {
+                    if (alunos[i].childNodes[37].innerHTML == selectedOptionText) {
+                      const matricula = alunos[i].childNodes[43].innerHTML;
+                      const nome = alunos[i].childNodes[5].innerHTML;
+                      const turma = alunos[i].childNodes[37].innerHTML;
+                      const nascimento = alunos[i].childNodes[13].innerHTML;
+            
+                      const checkbox = document.createElement('input');
+                      checkbox.type = 'checkbox';
+            
+                      checkbox.addEventListener('click', function () {
+                        if (this.checked) {
+                          selectedTags.push(alunos[i]);
+                        } else {
+                          const index = selectedTags.indexOf(alunos[i]);
+                          if (index > -1) {
+                            selectedTags.splice(index, 1);
+                          }
+                        }
+                      });
+            
+                      const listItem = document.createElement('li');
+                      listItem.appendChild(checkbox);
+                      listItem.appendChild(document.createTextNode(' ' + nome));
+            
+                      document.getElementById('list-students').appendChild(listItem);
+                    }
+                  }
+                } else {
+                  console.error('Erro na requisição: ' + xhr.statusText);
+                }
+              };
+            
+              xhr.onerror = function () {
+                console.error('Erro na requisição.');
+              };
+            
+              xhr.send();
+            });
+            
+            document.getElementById('generate-cards-btn').addEventListener('click', () => {
+              document.getElementById('ul-cards').innerHTML = '';
+            
+              for (let i = 0; i < selectedTags.length; i++) {
+                const xhrImage = new XMLHttpRequest();
+                const url =
+                  'https://api.sponteeducacional.net.br/WSAPIEdu.asmx/GetImageApp?nCodigoCliente=' +
+                  codClienteUnidadeIII +
+                  '&nAlunoID=' +
+                  selectedTags[i].childNodes[3].innerHTML +
+                  '&nResponsavelID=0&sToken=' +
+                  tokenUnidadeIII;
+            
+                xhrImage.open('GET', url, true);
+            
+                xhrImage.onload = function () {
+                  if (xhrImage.status === 200) {
+                    const data = xhrImage.responseXML;
+            
+                    const listItem = document.createElement('li');
+                    listItem.innerHTML =
+                      '<ul class="card" id="card">' +
+                      '<li><img src="' + document.getElementById('front-icon').style.backgroundImage.replace('url(', '').replace(')', '').replaceAll('"', '') + '" alt="" id="frente"></li>' +
+                      '<li><img src="' + document.getElementById('verse-icon').style.backgroundImage.replace('url(', '').replace(')', '').replaceAll('"', '') + '" alt="" id="verso"></li>' +
+                      '</ul>' +
+                      '<div class="dados-alunos" id="dados-alunos">' +
+                      '<img src="' +
+                      'data:image/jpeg;base64,' +
+                      data.getElementsByTagName('wsFotoApp')[0].childNodes[7].innerHTML +
+                      '" alt="" class="photo" id="photo">' +
+                      '<div id="matricula"><span>Nº Matrícula:</span><br>' +
+                      selectedTags[i].childNodes[43].innerHTML +
+                      '</div>' +
+                      '<div id="name"><span>Nome:</span><br>' +
+                      selectedTags[i].childNodes[5].innerHTML +
+                      '</div>' +
+                      '<div id="turma"><span>Turma:</span><br>' +
+                      selectedTags[i].childNodes[37].innerHTML +
+                      '</div>' +
+                      '<div id="nascimento"><span>Data de Nascimento:</span><br>' +
+                      selectedTags[i].childNodes[13].innerHTML +
+                      '</div>' +
+                      '<div id="lei">A Lei da Meia-Entrada (Lei nº 12.933/2013) estabelece que todo estudante regularmente matriculado tem direito a pagar metade do valor em eventos culturais, esportivos e de lazer. Essa carteirinha comprova a condição de estudante e permite o acesso aos benefícios previstos na lei.</div>' +
+                      '<img src="' + 'https://api.qrserver.com/v1/create-qr-code/?size=60x60&data=' + selectedTags[i].childNodes[43].innerHTML + '" alt="" id="qrcode" class="qrcode">' +
+                      '<div id="validade"><strong>Validade:</strong> fev/2024</div>' +
+                      '<div id="school-name">Ícone Colégio e Curso</div>' +
+                      '<div id="endereco">Estr. do Rio Grande, 1159 - Taquara, RJ</div>' +
+                      '<div id="email">secretaria@kids.icone.g12.br</div>' +
+                      '<div id="telefone">(21) 3900-8299</div>' +
+                      '</div>';
+            
+                    document.getElementById('ul-cards').appendChild(listItem);
+                  } else {
+                    console.error('Erro na requisição: ' + xhrImage.statusText);
+                  }
+                };
+            
+                xhrImage.onerror = function () {
+                  console.error('Erro na requisição.');
+                };
+            
+                xhrImage.send();
+              }
+            });
         }
 
         
