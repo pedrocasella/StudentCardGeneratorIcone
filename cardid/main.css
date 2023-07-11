@@ -1,0 +1,313 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+@keyframes opacity {
+    0%{
+        opacity: 0;
+    }
+
+    100%{
+        opacity: 1;
+    }
+}
+
+nav{
+    border-bottom-style: solid;
+    border-bottom-color: #000;
+    border-bottom-width: 1px;
+    height: 100px;
+    -webkit-box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.22); 
+    box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.22);
+}
+
+nav ul{
+    list-style: none;
+    display: inline-flex;
+}
+
+nav input{
+    width: 150px;
+    padding: .5rem;
+    border-radius: 30px;
+    border-style: solid;
+    margin: 2rem .5rem 2rem .5rem;
+}
+
+nav .config{
+    width: 30px;
+    height: 30px;
+    margin: 2rem;
+    cursor: pointer;
+    background-image: url(./img/config.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+nav .config:hover{
+    transition: linear .5s;
+    transform: rotate(90deg);
+}
+
+select{
+    margin: 2rem 1rem 2rem 1rem;
+    width: 200px;
+    border-radius: 30px;
+    padding: .5rem;
+    border-style: solid;
+    text-align: center;
+}
+
+select option{
+    padding: .5rem;
+}
+
+.turma-btn{
+    margin-top: 2rem;
+    width: 100px;
+    text-align: center;
+    padding: .5rem;
+    border-radius: 30px;
+    color: #fff;
+    font-weight: bolder;
+    background-color: rgb(255, 86, 25);
+    user-select: none;
+    cursor: pointer;
+}
+
+.turma-btn:hover{
+    transition: linear .3s;
+    background-color: rgb(255, 80, 16);
+}
+
+/* Carteirinha */
+
+.card{
+    margin: 2rem;
+    list-style: none;
+    display: inline-flex;
+}
+
+.card li{
+    margin-right: 1rem;
+}
+
+.card img{
+    width: 321px;
+    height: 210px;
+    border-radius: 7px;
+    border-style: solid;
+    border-width: 1px;
+}
+
+    /*Dados dos Alunos*/
+    .dados-alunos{
+        position: absolute;
+        transform: translate(55px, -220px);
+        font-size: 13px;
+    }
+
+    .dados-alunos img{
+        transform: translate(0px, 20px);
+        width: 75px;
+        height: 105px;
+        border-radius: 8px;
+    }
+
+    .dados-alunos span{
+        font-weight: bolder;
+        font-size: 9px;
+    }
+
+    .dados-alunos #name{
+        position: absolute;
+        width: 178px;
+        transform: translate(90px, -90px);
+    }
+
+    .dados-alunos #matricula{
+        position: absolute;
+        width: 200px;
+        transform: translate(200px, 10px);
+    }
+
+    .dados-alunos #turma{
+        position: absolute;
+        width: 210px;
+        transform: translate(90px, -38px);
+    }
+
+    .dados-alunos #nascimento{
+        position: absolute;
+        width: 200px;
+        transform: translate(90px, 10px);
+    }
+
+    /*Verso*/
+
+    .dados-alunos #lei{
+        position: absolute;
+        width: 280px;
+        transform: translate(335px, -90px);
+        font-size: 6pt;
+        text-align: justify;
+    }
+
+    .dados-alunos .qrcode{
+        position: absolute;
+        width: 60px;
+        height: 60px;
+        border-radius: 0px;
+        transform: translate(480px, 100px);
+    }
+
+    .dados-alunos #validade{
+        position: absolute;
+        width: 200px;
+        transform: translate(430px, -20px);
+        font-size: 8pt;
+    }
+
+    .dados-alunos #email{
+        position: absolute;
+        width: 200px;
+        transform: translate(380px, 14px);
+        font-size: 6.5pt;
+    }
+
+    .dados-alunos #school-name{
+        position: absolute;
+        width: 200px;
+        transform: translate(380px, 2px);
+        font-weight: bolder;
+        font-size: 6.5pt;
+    }
+
+    .dados-alunos #endereco{
+        position: absolute;
+        width: 200px;
+        transform: translate(380px, 26px);
+        font-size: 7pt;
+    }
+
+    .dados-alunos #telefone{
+        position: absolute;
+        width: 200px;
+        transform: translate(440px, 40px);
+        font-size: 7pt;
+    }
+
+/*Upload photos*/
+
+.black-background{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: #0000008c;
+    z-index: 2;
+    display: none;
+    animation: opacity .3s ease-in-out;
+}
+
+.black-background .subtitle{
+    font-weight: bolder;
+    margin: 2rem;
+}
+
+.black-background .subtitle span{
+    font-size: 10pt;
+    font-weight: initial;
+}
+
+.black-background .modal-config{
+    transform: translate(0rem, 2rem);
+    width: 500px;
+    background-color: #fff;
+    border-radius: 12px;
+    padding: .5rem;
+}
+
+#front{
+    display: none;
+}
+
+.black-background .front-icon{
+    margin-top: 1rem;
+    width: 160.5px;
+    height: 105px;
+    background-image: url(./img/front.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: pointer;
+}
+
+.black-background .front-icon:hover{
+    border-style: solid;
+    border-radius: 8px;
+    border-width: 1px;
+    border-color: #000;
+}
+
+#verse{
+    display: none;
+}
+
+.black-background .verse-icon{
+    margin-top: 1rem;
+    width: 160.5px;
+    height: 105px;
+    background-image: url(./img/verse.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: pointer;
+}
+
+.black-background .verse-icon:hover{
+    border-style: solid;
+    border-radius: 8px;
+    border-width: 1px;
+    border-color: #000;
+}
+
+.change-btn{
+    width: 200px;
+    padding: .5rem;
+    border-radius: 30px;
+    background-color: rgb(252, 107, 54);
+    cursor: pointer;
+    user-select: none;
+    font-weight: bolder;
+    color: #fff;
+    margin: 2rem;
+}
+
+.change-btn:hover{
+    transition: linear .3s;
+    background-color: rgb(255, 96, 39);
+}
+
+.black-background .close{
+    font-weight: bolder;
+    transform: translate(280px, 40px);
+    color: #fff;
+    font-size: 20pt;
+    user-select: none;
+    cursor: pointer;
+}
+
+.imprimir{
+    width: 200px;
+    margin: 2rem;
+    padding: .5rem;
+    background-color: rgb(255, 96, 39);
+    border-radius: 30px;
+    color: #fff;
+    font-weight: bolder;
+    user-select: none;
+    cursor: pointer;
+}

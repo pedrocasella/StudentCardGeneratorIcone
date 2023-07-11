@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://iconecolegioecurso.com.br/controledesala/icon/icone_icon.png">
+    <link rel="stylesheet" href="./main.css">
+    <title>Carteira de Acesso</title>
+</head>
+<body>
+    <div class="black-background" id="black-background">
+        <center>
+            <div class="close" id="close">X</div>
+            <div class="modal-config" id="modal-config">
+                <div class="subtitle">Frente <span>(Recomendado: 321px X 210px)</span></div>
+                <input type="file" name="" id="front">
+                <label for="front">
+                    <div class="front-icon" id="front-icon"></div>
+                </label>
+                <div class="subtitle">Verso <span>(Recomendado: 321px X 210px)</span></div>
+                <input type="file" name="" id="verse">
+                <label for="verse">
+                    <div class="verse-icon" id="verse-icon"></div>
+                </label>
+                <div class="change-btn" id="change-btn">Confirmar</div>
+            </div>
+        </center>
+    </div>
+
+
+    <nav id="nav">
+        <center>
+            <ul>
+                <li>
+                    <li>
+                        <select name="" id="unidade">
+                            <option value="">--Selecione a Unidade--</option>
+                            <option value="unidadeI">Unidade I</option>
+                            <option value="unidadeII">Unidade II</option>
+                            <option value="unidadeIII">Unidade III</option>
+                            <option value="unidadeIV">Unidade IV</option>
+                        </select>
+                    </li>
+                    <select name="" id="turmasInput">
+                        <option value="">--Selecione a Turma--</option>
+                    </select>
+                    <select name="" id="alunosInput">
+                        <option value="">--Selecione o Aluno--</option>
+                    </select>
+                </li>
+                <li>
+                    <div class="turma-btn" id="turma-btn">Exibir</div>
+                </li>
+                <li>
+                    <div class="config" id="config"></div>
+                </li>
+            </ul>
+        </center>
+    </nav>
+    <ul class="card" id="card">
+        <li><img src="" alt="" id="frente"></li>
+        <li><img src="" alt="" id="verso"></li>
+    </ul>
+    <div class="dados-alunos" id="dados-alunos">
+        <img src="" alt="" class="photo" id="photo">
+        <div id="matricula"></div>
+        <div id="name"></div>
+        <div id="turma"></div>
+        <div id="nascimento"></div>
+
+        <!-- Verso -->
+        <div id="lei">A Lei da Meia-Entrada (Lei nº 12.933/2013) estabelece que todo estudante regularmente matriculado tem direito a pagar metade do valor em eventos culturais, esportivos e de lazer. Essa carteirinha comprova a condição de estudante e permite o acesso aos benefícios previstos na lei.</div>
+        <img src="" alt="" id="qrcode" class="qrcode">
+        <div id="validade"><strong>Validade:</strong> fev/2024</div>
+        <div id="school-name">Ícone Colégio e Curso</div>
+        <div id="endereco">Estr. do Tindiba, 3250 - Taquara, RJ</div>
+        <div id="email">secretaria@unidade2.icone.g12.br</div>
+        <div id="telefone">(21) 3900-8299</div>
+    </div>
+    <center><div class="imprimir" id="imprimir">Imprimir</div></center>
+    <script src="./app.js" type="module"></script>
+</body>
+</html>
