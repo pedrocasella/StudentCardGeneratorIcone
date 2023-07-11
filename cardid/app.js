@@ -22,6 +22,7 @@ const dbRef = ref(getDatabase());
 get(child(dbRef, 'Sponte_API/')).then((snapshot) => {
     if (snapshot.exists()) {
 
+
         const data = snapshot.val()
         
         const codClienteUnidadeI = data.unidade_i.codigo_cliente
@@ -38,36 +39,33 @@ get(child(dbRef, 'Sponte_API/')).then((snapshot) => {
 
         document.getElementById('unidade').addEventListener('change', ()=>{
             const unidade = document.getElementById('unidade').value
-        
+            document.getElementById('ul-cards').innerHTML = ''
+
             if(unidade == 'unidadeI'){
                 document.getElementById('turmasInput').innerHTML = '<option value="">--Selecione a Unidade--</option>'
                 document.getElementById('select-turma-list').innerHTML = '<option value="null">--Selecione a Turma--</option>'
-                document.getElementById('email').innerHTML = 'secretaria@unidade1.icone.g12.br'
-                document.getElementById('endereco').innerHTML = 'Av. dos Mananciais, 436 - Taquara, RJ'
+                document.getElementById('ul-cards').innerHTML = '<li> <ul class="card" id="card"> <li><img src="' + document.getElementById('front-icon').style.backgroundImage.replace('url(', '').replace(')', '').replaceAll('"', '') + '" alt="" id="frente"></li> <li><img src="' + document.getElementById('verse-icon').style.backgroundImage.replace('url(', '').replace(')', '').replaceAll('"', '') + '" alt="" id="verso"></li> </ul> <div class="dados-alunos" id="dados-alunos"> <img src="" alt="" class="photo" id="photo"> <div id="matricula"></div> <div id="name"></div> <div id="turma"></div> <div id="nascimento"></div> <!-- Verso --> <div id="lei">A Lei da Meia-Entrada (Lei nº 12.933/2013) estabelece que todo estudante regularmente matriculado tem direito a pagar metade do valor em eventos culturais, esportivos e de lazer. Essa carteirinha comprova a condição de estudante e permite o acesso aos benefícios previstos na lei.</div> <img src="" alt="" id="qrcode" class="qrcode"> <div id="validade"><strong>Validade:</strong> fev/2024</div> <div id="school-name">Ícone Colégio e Curso</div> <div id="endereco">Av. dos Mananciais, 436 - Taquara, RJ</div> <div id="email">secretaria@unidade1.icone.g12.br</div> <div id="telefone">(21) 3900-8299</div> </div> </li>'
                 appInitMananciais()
             }
         
             if(unidade == 'unidadeII'){
                 document.getElementById('turmasInput').innerHTML = '<option value="">--Selecione a Unidade--</option>'
                 document.getElementById('select-turma-list').innerHTML = '<option value="null">--Selecione a Turma--</option>'
-                document.getElementById('email').innerHTML = 'secretaria@unidade2.icone.g12.br'
-                document.getElementById('endereco').innerHTML = 'Estr. do Tindiba, 3250 - Taquara, RJ'
+                document.getElementById('ul-cards').innerHTML = '<li> <ul class="card" id="card"> <li><img src="' + document.getElementById('front-icon').style.backgroundImage.replace('url(', '').replace(')', '').replaceAll('"', '') + '" alt="" id="frente"></li> <li><img src="' + document.getElementById('verse-icon').style.backgroundImage.replace('url(', '').replace(')', '').replaceAll('"', '') + '" alt="" id="verso"></li> </ul> <div class="dados-alunos" id="dados-alunos"> <img src="" alt="" class="photo" id="photo"> <div id="matricula"></div> <div id="name"></div> <div id="turma"></div> <div id="nascimento"></div> <!-- Verso --> <div id="lei">A Lei da Meia-Entrada (Lei nº 12.933/2013) estabelece que todo estudante regularmente matriculado tem direito a pagar metade do valor em eventos culturais, esportivos e de lazer. Essa carteirinha comprova a condição de estudante e permite o acesso aos benefícios previstos na lei.</div> <img src="" alt="" id="qrcode" class="qrcode"> <div id="validade"><strong>Validade:</strong> fev/2024</div> <div id="school-name">Ícone Colégio e Curso</div> <div id="endereco">Estr. do Tindiba, 3250 - Taquara, RJ</div> <div id="email">secretaria@unidade2.icone.g12.br</div> <div id="telefone">(21) 3900-8299</div> </div> </li>'
                 appInitTindiba()
             }
         
             if(unidade == 'unidadeIV'){
                 document.getElementById('turmasInput').innerHTML = '<option value="">--Selecione a Unidade--</option>'
                 document.getElementById('select-turma-list').innerHTML = '<option value="null">--Selecione a Turma--</option>'
-                document.getElementById('email').innerHTML = 'secretaria@unidade4.icone.g12.br'
-                document.getElementById('endereco').innerHTML = 'Praça Miguel Osório, 22 - Recreio, RJ'
+                document.getElementById('ul-cards').innerHTML = '<li> <ul class="card" id="card"> <li><img src="' + document.getElementById('front-icon').style.backgroundImage.replace('url(', '').replace(')', '').replaceAll('"', '') + '" alt="" id="frente"></li> <li><img src="' + document.getElementById('verse-icon').style.backgroundImage.replace('url(', '').replace(')', '').replaceAll('"', '') + '" alt="" id="verso"></li> </ul> <div class="dados-alunos" id="dados-alunos"> <img src="" alt="" class="photo" id="photo"> <div id="matricula"></div> <div id="name"></div> <div id="turma"></div> <div id="nascimento"></div> <!-- Verso --> <div id="lei">A Lei da Meia-Entrada (Lei nº 12.933/2013) estabelece que todo estudante regularmente matriculado tem direito a pagar metade do valor em eventos culturais, esportivos e de lazer. Essa carteirinha comprova a condição de estudante e permite o acesso aos benefícios previstos na lei.</div> <img src="" alt="" id="qrcode" class="qrcode"> <div id="validade"><strong>Validade:</strong> fev/2024</div> <div id="school-name">Ícone Colégio e Curso</div> <div id="endereco">Praça Miguel Osório, 22 - Recreio, RJ</div> <div id="email">secretaria@unidade4.icone.g12.br</div> <div id="telefone">(21) 3900-8299</div> </div> </li>'
                 appInitRecreio()
             }
         
             if(unidade == 'unidadeIII'){
                 document.getElementById('turmasInput').innerHTML = '<option value="">--Selecione a Unidade--</option>'
                 document.getElementById('select-turma-list').innerHTML = '<option value="null">--Selecione a Turma--</option>'
-                document.getElementById('email').innerHTML = 'secretaria@kids.icone.g12.br'
-                document.getElementById('endereco').innerHTML = 'Estr. do Rio Grande, 1159 - Taquara, RJ'
+                document.getElementById('ul-cards').innerHTML = '<li> <ul class="card" id="card"> <li><img src="' + document.getElementById('front-icon').style.backgroundImage.replace('url(', '').replace(')', '').replaceAll('"', '') + '" alt="" id="frente"></li> <li><img src="' + document.getElementById('verse-icon').style.backgroundImage.replace('url(', '').replace(')', '').replaceAll('"', '') + '" alt="" id="verso"></li> </ul> <div class="dados-alunos" id="dados-alunos"> <img src="" alt="" class="photo" id="photo"> <div id="matricula"></div> <div id="name"></div> <div id="turma"></div> <div id="nascimento"></div> <!-- Verso --> <div id="lei">A Lei da Meia-Entrada (Lei nº 12.933/2013) estabelece que todo estudante regularmente matriculado tem direito a pagar metade do valor em eventos culturais, esportivos e de lazer. Essa carteirinha comprova a condição de estudante e permite o acesso aos benefícios previstos na lei.</div> <img src="" alt="" id="qrcode" class="qrcode"> <div id="validade"><strong>Validade:</strong> fev/2024</div> <div id="school-name">Ícone Colégio e Curso</div> <div id="endereco">Estr. do Rio Grande, 1159 - Taquara, RJ</div> <div id="email">secretaria@kids.icone.g12.br</div> <div id="telefone">(21) 3900-8299</div> </div> </li>'
                 appInitKids()
             }
         
@@ -510,6 +508,8 @@ get(child(dbRef, 'Sponte_API/')).then((snapshot) => {
                 xhr.send();
             })
 
+            //Impressão em massa
+
             // Array para armazenar as tags selecionadas
             const selectedTags = [];
 
@@ -596,8 +596,8 @@ get(child(dbRef, 'Sponte_API/')).then((snapshot) => {
                     const listItem = document.createElement('li');
                     listItem.innerHTML =
                       '<ul class="card" id="card">' +
-                      '<li><img src="" alt="" id="frente"></li>' +
-                      '<li><img src="" alt="" id="verso"></li>' +
+                      '<li><img src="' + document.getElementById('front-icon').style.backgroundImage.replace('url(', '').replace(')', '').replaceAll('"', '') + '" alt="" id="frente"></li>' +
+                      '<li><img src="' + document.getElementById('verse-icon').style.backgroundImage.replace('url(', '').replace(')', '').replaceAll('"', '') + '" alt="" id="verso"></li>' +
                       '</ul>' +
                       '<div class="dados-alunos" id="dados-alunos">' +
                       '<img src="' +

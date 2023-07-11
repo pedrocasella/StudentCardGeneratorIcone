@@ -344,11 +344,21 @@ select option{
     cursor: default;
 }
 
+#ul-cards{
+    transform: translateY(15%);
+}
+
+#ul-cards li{
+    margin-top: -1.5rem;
+}
+
 /*----*/
 
 .imprimir{
     width: 200px;
-    margin: 2rem;
+    position: fixed;
+    transform: translate(800px, -200px);
+    margin: 3rem 2rem 2rem 2rem;
     padding: .5rem;
     background-color: rgb(255, 96, 39);
     border-radius: 30px;
