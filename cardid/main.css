@@ -23,6 +23,17 @@ nav{
     box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.22);
 }
 
+nav .icon{
+    position: absolute;
+    background-image: url(./img/icone02.png);
+    transform: translate(50px, 10px);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 80px;
+    height: 80px;
+}
+
 nav ul{
     list-style: none;
     display: inline-flex;
@@ -37,20 +48,63 @@ nav input{
 }
 
 nav .config{
-    width: 30px;
-    height: 30px;
+    width: 35px;
+    height: 35px;
     margin: 2rem;
     cursor: pointer;
-    background-image: url(./img/config.png);
+    background-image: url(./img/menu.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
-nav .config:hover{
-    transition: linear .5s;
-    transform: rotate(90deg);
+/*Options */
+
+.options{
+    position: absolute;
+    top: 80px;
+    right: 80px;
+    z-index: 3;
+    width: 200px;
+    height: fit-content;
+    background-color: #fff;
+    border: solid #000 1px;
+    -webkit-box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.18); 
+    box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.18);
+    display: none;
 }
+
+.options .btn{
+    user-select: none;
+    padding: 1rem;
+    border-bottom: solid #000 1px;
+    background-color: #fff;
+}
+
+.options .btn:hover{
+    transition: linear .3s;
+    cursor: pointer;
+    background-color: #ffe7e7;
+
+}
+
+.options #change-background{
+    background-image: url(./img/edit.png);
+    background-position-y: center;
+    background-position-x: 160px;
+    background-repeat: no-repeat;
+    background-size: 20px;
+}
+
+.options #select-alunos{
+    background-image: url(./img/idcards.png);
+    background-position-y: center;
+    background-position-x: 160px;
+    background-repeat: no-repeat;
+    background-size: 20px;
+}
+
+/*------*/
 
 select{
     margin: 2rem 1rem 2rem 1rem;
@@ -208,7 +262,7 @@ select option{
     height: 100%;
     background-color: #0000008c;
     z-index: 2;
-    display: block;
+    display: none;
     animation: opacity .3s ease-in-out;
 }
 
@@ -311,6 +365,7 @@ select option{
     transform: translateY(10%);
     overflow-y: scroll;
     border-radius: 7px;
+    display: none;
 }
 
 .modal-list .list-students{
@@ -368,4 +423,12 @@ select option{
     font-weight: bolder;
     user-select: none;
     cursor: pointer;
+}
+
+.imprimir{
+    background-image: url(./img/print.png);
+    background-position-y: center;
+    background-position-x: 160px;
+    background-repeat: no-repeat;
+    background-size: 20px;
 }

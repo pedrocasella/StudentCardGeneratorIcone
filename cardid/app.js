@@ -1270,12 +1270,38 @@ document.getElementById('change-btn').addEventListener('click', ()=>{
 document.getElementById('close').addEventListener('click', ()=>{
     document.getElementById('black-background').style.display = 'none'
     document.getElementById('modal-config').style.display = 'none'
+    document.getElementById('modal-list').style.display = 'none'
 })
 
 document.getElementById('config').addEventListener('click', ()=>{
-    document.getElementById('black-background').style.display = 'block'
+    
+
+    if(document.getElementById('config').style.backgroundImage == 'url("img/menuhover.png")'){
+        document.getElementById('config').style.backgroundImage = 'url(img/menu.png)'
+        document.getElementById('options').style.display = 'none'
+    }else{
+        document.getElementById('config').style.backgroundImage = 'url(img/menuhover.png)'
+        document.getElementById('options').style.display = 'block'
+    }
+    
     //document.getElementById('modal-config').style.display = 'block'
     
+})
+
+//abrir mudar carteirinha
+document.getElementById('change-background').addEventListener('click', ()=>{
+    document.getElementById('black-background').style.display = 'block'
+    document.getElementById('modal-config').style.display = 'block'
+    document.getElementById('config').style.backgroundImage = 'url(img/menu.png)'
+    document.getElementById('options').style.display = 'none'
+})
+
+//abrir selecionar alunos
+document.getElementById('select-alunos').addEventListener('click', ()=>{
+    document.getElementById('black-background').style.display = 'block'
+    document.getElementById('modal-list').style.display = 'block'
+    document.getElementById('config').style.backgroundImage = 'url(img/menu.png)'
+    document.getElementById('options').style.display = 'none'
 })
 
 //imprimir
