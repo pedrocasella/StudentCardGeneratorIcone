@@ -14,6 +14,10 @@
     }
 }
 
+body{
+    display: none;
+}
+
 nav{
     border-bottom-style: solid;
     border-bottom-color: #000;
@@ -98,6 +102,22 @@ nav .config{
 
 .options #select-alunos{
     background-image: url(./img/idcards.png);
+    background-position-y: center;
+    background-position-x: 160px;
+    background-repeat: no-repeat;
+    background-size: 20px;
+}
+
+.options #select-config{
+    background-image: url(./img/config.png);
+    background-position-y: center;
+    background-position-x: 160px;
+    background-repeat: no-repeat;
+    background-size: 20px;
+}
+
+.options #exit{
+    background-image: url(./img/exit.png);
     background-position-y: center;
     background-position-x: 160px;
     background-repeat: no-repeat;
@@ -431,4 +451,159 @@ select option{
     background-position-x: 160px;
     background-repeat: no-repeat;
     background-size: 20px;
+}
+
+/* Modal Auth*/
+
+.modal-auth{
+    width: 500px;
+    height: 380px;
+    padding: 0rem 0rem 2rem 0rem;
+    background-color: #fff;
+    transform: translateY(10%);
+    overflow-y: scroll;
+    border-radius: 7px;
+    display: none;
+}
+
+.modal-auth::-webkit-scrollbar{
+    border-radius: 0px 7px 7px 0px;
+}
+
+.modal-auth .nav-auth{
+    display: inline-flex;
+    list-style: none;
+    font-weight: bolder;
+    width: 100%;
+    height: 10%;
+    user-select: none;
+}
+
+.modal-auth .nav-auth li{
+    width: 100%;
+    padding: 2rem;
+    border-bottom: #000 solid 1px;
+}
+
+.modal-auth .nav-auth li:hover{
+    transition: linear .3s;
+    background-color: #0000001a;
+    cursor: pointer;
+}
+
+.add-auth{
+    margin-top: 3rem;
+    animation: opacity .3s ease-in;
+}
+
+.add-auth .input-auth-ul{
+    display: inline-flex;
+    list-style: none;
+}
+
+.add-auth .input-auth-ul li{
+    margin-left: .5rem;
+}
+
+.add-auth input{
+    padding: 1rem;
+    border-style: solid;
+    border-radius: 30px;
+    margin-bottom: 2rem;
+}
+
+.add-auth .add-auth-btn{
+    width: 15px;
+    height: 15px;
+    padding: 1rem;
+    background-color: #f16136;
+    background-image: url(./img/seta.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 40%;
+    border-radius: 100%;
+}
+
+.add-auth .add-auth-btn:hover{
+    transition: linear .3s;
+    background-color: #f85321;
+    cursor: pointer;
+}
+
+.authorized-email{
+    margin-top: .5rem;
+    text-align: left;
+    padding: 1rem;
+    border-top: #000 solid 1px;
+}
+
+.authorized-email strong{
+    user-select: none;
+}
+
+.authorized-email .delete-btn{
+    width: 30px;
+    height: 30px;
+    background-color: rgb(247, 31, 31);
+    border-radius: 100%;
+    background-image: url(./img/delete.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 40%;
+    margin-top: 1rem;
+}
+
+.authorized-email .delete-btn:hover{
+    transition: linear .3s;
+    cursor: pointer;
+    background-color: rgb(248, 51, 51);
+}
+
+.access-requests{
+    animation: opacity .3s ease-in;
+    display: none;
+}
+
+.access-request{
+    margin-top: 2rem;
+    text-align: left;
+    padding: 1rem;
+    border-bottom: solid #000 1px;
+}
+
+.access-request strong{
+    user-select: none;
+}
+
+.accept-btn{
+    width: 30px;
+    height: 30px;
+    background-image: url(./img/aceitar.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    margin-top: .5rem;
+}
+
+.accept-btn:hover{
+    transition: linear .3s;
+    transform: scale(110%);
+    cursor: pointer;
+}
+
+.deny-btn{
+    width: 30px;
+    height: 30px;
+    background-image: url(./img/negar.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    position: absolute;
+    transform: translate(50px, -30px);
+}
+
+.deny-btn:hover{
+    transition: linear .3s;
+    transform: translate(50px, -30px) scale(110%);
+    cursor: pointer;
 }

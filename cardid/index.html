@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="https://iconecolegioecurso.com.br/controledesala/icon/icone_icon.png">
     <link rel="stylesheet" href="./main.css">
-    <title>Carteirinha de Estudante - Ícone Colégio e Curso</title>
+    <title>Carteirinha Digital - Ícone Colégio e Curso</title>
 </head>
-<body>
+<body id="body">
     <div class="black-background" id="black-background">
         <center>
             <div class="close" id="close">X</div>
@@ -33,6 +33,27 @@
                     
                 </ul>
             </div>
+
+            <div class="modal-auth" id="modal-auth">
+                <ul class="nav-auth">
+                    <li id="permissao-btn">Permissões</li>
+                    <li id="solicitacao-btn">Solicitações</li>
+                </ul>
+                <div class="add-auth" id="add-auth">
+                    <ul class="input-auth-ul">
+                        <li><input type="email" placeholder="example@icone.g12.br" id="email-add-input"></li>
+                        <li><div class="add-auth-btn" id="add-auth-btn"></div></li>
+                    </ul>
+
+                    <div class="authorized-list" id="authorized-list">
+                        
+                    </div>
+                </div>
+                <div class="access-requests" id="access-requests">
+                
+                </div>
+            </div>
+
         </center>
     </div>
 
@@ -42,6 +63,8 @@
         <div class="options" id="options">
             <div class="btn" id="change-background">Alterar design</div>
             <div class="btn" id="select-alunos">Selecionar alunos</div>
+            <div class="btn" id="select-config">Configurações</div>
+            <div class="btn" id="exit">Sair</div>
         </div>
         <center>
             <ul>

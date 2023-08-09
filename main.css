@@ -4,6 +4,26 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+body{
+    overflow-y: hidden;
+    background-image: url(./img/background.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.detail001{
+    width: 500px;
+    height: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url(./img/detail001.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 .login-card{
     width: 500px;
     height: 400px;
@@ -11,10 +31,21 @@
     border-radius: 12px;
     -webkit-box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.26); 
     box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.26);
+    background-color: #fff;
+}
+
+.login-card .logo{
+    width: 120px;
+    height: 120px;
+    background-image: url(./img/icone02.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transform: translateY(85%);
 }
 
 .login-card .login-btn{
-    transform: translateY(500%);
+    transform: translateY(300%);
     width: fit-content;
     padding: .8rem;
     border-radius: 6px;
@@ -23,4 +54,133 @@
     background-color: #f26036;
     cursor: pointer;
     user-select: none;
+}
+
+.background-detail{
+    position: absolute;
+    right: 0;
+    width: 25%;
+    height: 100%;
+    background-image: url(./img/img001.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-x: -50px;
+}
+
+@keyframes opacity {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+.deny-alert{
+    bottom: 0;
+    position: fixed;
+    margin: 1.5rem;
+    width: fit-content;
+    font-weight: bolder;
+    padding: 1rem;
+    background-color: #ff2727;
+    color: #fff;
+    border-radius: 12px;
+    user-select: none;
+    animation: opacity 1s ease-in;
+    display: none;
+    -webkit-box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.19); 
+    box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.19);
+}
+
+.icon-deny{
+    margin: .5rem;
+    padding: 1rem;
+    background-color: #00000000;
+    background-image: url(./img/alert.png);
+    background-size: 80%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.allow-alert{
+    bottom: 0;
+    position: fixed;
+    margin: 1.5rem;
+    width: fit-content;
+    font-weight: bolder;
+    padding: 1rem;
+    background-color: #ffa127;
+    color: #fff;
+    border-radius: 12px;
+    user-select: none;
+    animation: opacity 1s ease-in;
+    display: none;
+    -webkit-box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.19); 
+    box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.19);
+}
+
+.icon-allow{
+    margin: .5rem;
+    padding: 1rem;
+    background-color: #00000000;
+    background-image: url(./img/allow.png);
+    background-size: 80%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+@media screen and (max-width: 500px){
+
+    body{
+        overflow-x: hidden;
+    }
+
+    .background-detail{
+        position: absolute;
+        left: 0;
+        transform: translate(-100px, 80px) scale(70%);
+        width: 390px;
+        height: 100%;
+        background-image: url(./img/img001.png);
+        background-size: 140%;
+        background-repeat: no-repeat;
+        background-position-x: -35px;
+    }
+}
+
+@media screen and (max-width: 450px){
+    body{
+        overflow-x: hidden;
+    }
+
+    .detail001{
+        width: 300px;
+        height: 120px;
+        background-position: -370px , 0px;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    .background-detail{
+        position: absolute;
+        right: 0;
+        transform: translate(-100px, 200px) scale(70%);
+        width: 390px;
+        height: 100%;
+        background-image: url(./img/img001.png);
+        background-size: 140%;
+        background-repeat: no-repeat;
+        background-position-x: -35px;
+    }
+
+    .login-card{
+        width: 280px;
+        height: 400px;
+        margin-top: 6rem;
+        border-radius: 12px;
+        -webkit-box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.26); 
+        box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.26);
+        background-color: #fff;
+    }
 }
